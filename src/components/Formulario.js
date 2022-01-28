@@ -108,7 +108,7 @@ const Formulario = ({guardarResumen, guardarCargando}) => {
       guardarCargando(false);
       // Despues de tres segundos muestra la informacion.
       guardarResumen({
-        cotizacion: resultado,
+        cotizacion: Number(resultado),
         datos
       });
     }, 3000);
