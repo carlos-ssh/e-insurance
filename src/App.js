@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import Header from './components/Header';
 import Formulario from './components/Formulario';
+import Resumen from './components/Resumen';
 
 const Contenedor= styled.div`
   max-width: 600px;
@@ -13,15 +14,30 @@ const ContenedorFormulario = styled.div`
   padding: 3rem;
 `;
 
-
 function App() {
+  const [ resumen, guardarResumen ] = useState({
+    costizacion: 0,
+    datos: {
+      marca: '',
+      year: '',
+      plan: ''
+    }
+  });
+  const { datos } = resumen;
+
+
   return (
     <Contenedor>
       <Header
         titulo='Insurance Quoter'
       />
       <ContenedorFormulario>
-        <Formulario />
+        <Formulario
+          guardarResumen={guardarResumen}
+        />
+        <Resumen
+          datos={datos}
+        />
       </ContenedorFormulario>
     </Contenedor>
   );

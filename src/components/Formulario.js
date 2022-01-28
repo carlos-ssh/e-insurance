@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 // import PropTypes from 'prop-types';
-import { obtenerDiferenciaYear, carcularMarca } from '../helper';
+import { obtenerDiferenciaYear, carcularMarca, obtenerPlan } from '../helper';
 
 const Campo = styled.div`
   display: flex;
@@ -52,7 +52,7 @@ const Error = styled.div`
   margin-bottom: 2rem;
 `;
 
-const Formulario = () => {
+const Formulario = ({guardarResumen}) => {
 
   const [ datos, guardarDatos ] = useState({
     marca: '',
@@ -96,10 +96,15 @@ const Formulario = () => {
     // Asiatico 5%
     // Europeo 30%
     resultado = carcularMarca(marca) * resultado;
-    console.log(resultado);
-    
     // Basico aumenta 20%
     // Completo 50%
+    const incrementoPlan = obtenerPlan(plan);
+    resultado = parseFloat( incrementoPlan * resultado ).toFixed(2);
+
+    guardarResumen({
+      cotizacion: resultado,
+      datos
+    })
 
     // Total
   };

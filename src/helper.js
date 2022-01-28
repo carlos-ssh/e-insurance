@@ -6,6 +6,9 @@ export function obtenerDiferenciaYear(year) {
 
 // Calcula el total a pagar, segun la marca
 export function carcularMarca(marca) {
+  // Americano 15%
+  // Asiatico 5%
+  // Europeo 30%
   let incremento;
 
   switch(marca){
@@ -22,4 +25,8 @@ export function carcularMarca(marca) {
       break;
   }
   return incremento;
+}
+
+export function obtenerPlan(plan) {
+  return (plan === 'basico') ? 1.20 : 1.50;
 }
