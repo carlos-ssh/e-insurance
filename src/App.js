@@ -1,13 +1,12 @@
 import React from 'react';
+import Header from './components/Header'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
+      <Header
+        titulo='Insurance Quoter'
+      />
     </div>
   );
 }
