@@ -3,7 +3,6 @@ export function obtenerDiferenciaYear(year) {
   return new Date().getFullYear() - year;
 }
 
-
 // Calcula el total a pagar, segun la marca
 export function carcularMarca(marca) {
   // Americano 15%
@@ -29,4 +28,9 @@ export function carcularMarca(marca) {
 
 export function obtenerPlan(plan) {
   return (plan === 'basico') ? 1.20 : 1.50;
+}
+
+// Mostrar texto capitalizado
+export function primerMayuscula(texto) {
+  return texto.charAt(0).toUpperCase() + texto.slice(1);
 }

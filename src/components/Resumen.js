@@ -1,4 +1,14 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import styled from '@emotion/styled';
+import { primerMayuscula } from '../helper';
+
+const ContenedorResumen = styled.div`
+  padding: 1rem;
+  text-align: center;
+  background-color: #00838F;
+  color: #fff;
+  margin-top: 1rem;
+`;
 
 
 const Resumen = ({datos}) => {
@@ -7,14 +17,14 @@ const Resumen = ({datos}) => {
   if(marca === '' || year === '' || plan === '') return null;
 
   return (
-    <Fragment>
+    <ContenedorResumen>
       <h2>Quote Summary</h2>
       <ul>
-        <li>Brand: </li>
-        <li>Year: </li>
-        <li>Plan: </li>
+        <li>Brand: {primerMayuscula(marca)}</li>
+        <li>Plan: {primerMayuscula(plan)}</li>
+        <li>Year: {year}</li>
       </ul>
-    </Fragment>
+    </ContenedorResumen>
   );
 }
 
